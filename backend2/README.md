@@ -71,3 +71,7 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+<!--  -->
+to install
+npx nest add nestjs-prisma --add-prisma-service
+npx prisma studio //for run prisma
