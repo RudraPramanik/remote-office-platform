@@ -1,1 +1,1 @@
-Backend Typescript, NestJS, MicroService for SAAS platform
+Backend Typescript, NestJS, MicroService for SAAS platform for Remote Office

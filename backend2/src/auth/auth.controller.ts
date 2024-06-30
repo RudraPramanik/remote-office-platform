@@ -5,17 +5,29 @@ import { AuthGuard } from './auth.guard';
 
 @Controller('auth')
 export class AuthController {
-  constructor(private authService: AuthService) {}
-
-  @HttpCode(HttpStatus.OK)
-  @Post('login')
-  signIn(@Body() signInDto: Record<string, any>) {
-    return this.authService.signIn(signInDto.username, signInDto.password);
+  constructor(private readonly authService: AuthService) {}
+  @Post('signup')
+  signup(){
+    return this.authService.signUp()
+  }
+  @Post('signin')
+  signin(){
+    return this.authService.signIn()
+  }
+  @Get('signup')
+  signout(){
+    return this.authService.signOut()
   }
 
-  @UseGuards(AuthGuard)
-  @Get("profile")
-  getProfile(@Request() req ){
-    return req.user;
-  }
+  // @HttpCode(HttpStatus.OK)
+  // @Post('signin')
+  // signIn(@Body() signInDto: Record<string, any>) {
+  //   return this.authService.signIn(signInDto.username, signInDto.password);
+  // }
+
+  // @UseGuards(AuthGuard)
+  // @Get("profile")
+  // getProfile(@Request() req ){
+  //   return req.user;
+  // }
 }
